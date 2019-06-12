@@ -5,7 +5,7 @@ set -euxo pipefail
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "${THISDIR}" )"
 
-MAIN_MODULE="pyruncompare"
+MAIN_MODULE="pademelon"
 MODULES=( "${MAIN_MODULE}" "test" )
 
 cd "${BASEDIR}/app"

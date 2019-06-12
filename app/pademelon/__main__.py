@@ -1,5 +1,5 @@
 """
-Module load handler for execution via python -m pyruncompare.
+Module load handler for execution via python -m pademelon.
 
 Usage:
     %(exename)s [options] [<args>...]
