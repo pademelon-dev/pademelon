@@ -7,7 +7,6 @@ Usage:
 
 Options:
     -h --help         Show this screen
-    -m <module>       Import and run specified module like python -m
 
 """
 from __future__ import (
@@ -18,7 +17,6 @@ from __future__ import (
 # {{{ Imports
 # System Imports
 import sys
-import runpy
 # External Imports
 from docopt import docopt
 # }}}
@@ -31,20 +29,7 @@ def main():
     args = docopt(__doc__ % {
         'exename': ''.join(sys.argv[0:1]),
     })
-    if args['-m']:
-        log_module_run(args['-m'], args)
-    else:
-        print('Unknown options: %r' % (args,))
-
-
-def log_module_run(modulename, args):
-    """
-    Load and run the module like python -m with log dump enabled.
-    """
-    oldargs = list(sys.argv)
-    sys.argv = [modulename] + args['<args>']
-    runpy.run_module(modulename, run_name='__main__', alter_sys=True)
-    sys.argv = oldargs
+    print('Unknown options: %r' % (args,))
 
 
 if __name__ == '__main__':
