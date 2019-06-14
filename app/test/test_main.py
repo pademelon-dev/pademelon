@@ -10,7 +10,12 @@ def test_main():
     """
     # Setup
     from pademelon.__main__ import main
-    # Exercise
-    result = main()  # pylint: disable=assignment-from-no-return
+    from unittest import mock
+    fake_docopt = mock.patch(
+        'pademelon.__main__.docopt', return_value={}
+    )
+    with fake_docopt:
+        # Exercise
+        result = main()  # pylint: disable=assignment-from-no-return
     # Verify
     assert result is None
