@@ -1,5 +1,13 @@
 # pademelon
-Execute a python module or function and log all calls and locals to formats that can be compared for execution variations.
+Used to retrospectively add static type checking on legacy project by just
+running the checks on only files modified in a pull request. Can be used as a
+soft touch approach to bringing a new checking tool into a large project
+without one big bang.
+
+Supported checks include:
+* Bandit
+* Flake8
+* Pytest minimum coverage percentage.
 
 # PyPi.org
 https://pypi.org/project/pademelon/
