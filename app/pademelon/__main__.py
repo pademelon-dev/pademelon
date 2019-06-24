@@ -33,7 +33,7 @@ def main():
     args = docopt(__doc__ % {
         'exename': ''.join(sys.argv[0:1]),
     })
-    if args['--show-modified']:
+    if args.get('--show-modified') is not None:
         show_modified(args['--show-modified'])
     else:
         print('Unknown options: %r' % (args,))
