@@ -13,4 +13,5 @@ python -m flake8 "${MODULES[@]}"
 python -m pylint "${MODULES[@]}"
 python -m bandit -r "${MAIN_MODULE}"
 python -m pytest --cov-config=.coveragerc --cov-fail-under=100 "--cov=${MAIN_MODULE}"
+python -m pademelon --show-modified
 echo 'Testing Complete'

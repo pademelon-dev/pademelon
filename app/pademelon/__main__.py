@@ -6,7 +6,9 @@ Usage:
     %(exename)s (-h | --help)
 
 Options:
-    -h --help         Show this screen
+    -h --help                  Show this screen
+    --show-modified=<branch>   Display details of the modified files against
+                               GIT branch
 
 """
 from __future__ import (
@@ -19,6 +21,8 @@ from __future__ import (
 import sys
 # External Imports
 from docopt import docopt
+# Local Imports
+from pademelon.git import show_modified
 # }}}
 
 
@@ -29,7 +33,10 @@ def main():
     args = docopt(__doc__ % {
         'exename': ''.join(sys.argv[0:1]),
     })
-    print('Unknown options: %r' % (args,))
+    if args['--show-modified']:
+        show_modified(args['--show-modified'])
+    else:
+        print('Unknown options: %r' % (args,))
 
 
 if __name__ == '__main__':
