@@ -8,6 +8,8 @@ BASEDIR="$( dirname "${THISDIR}" )"
 MAIN_MODULE="pademelon"
 MODULES=( "${MAIN_MODULE}" "test" )
 
+cd "${BASEDIR}"
+python -m pyspelling
 cd "${BASEDIR}/app"
 python -m flake8 "${MODULES[@]}"
 python -m pylint "${MODULES[@]}"
