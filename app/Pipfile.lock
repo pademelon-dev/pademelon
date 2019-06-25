@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "64fd38190d609295e4069b1d9a2d92e1f40ce0602391547eb1685f2497f5c000"
+            "sha256": "9b6e63b134cb6119f92131f1a06ac25a616c875addb41dedff31e315d59c5287"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -214,10 +214,10 @@
         },
         "pbr": {
             "hashes": [
-                "sha256:089ccb087e9bd8f278caedfa6c2c5d461381437eda3db750b6834e78b319f404",
-                "sha256:9fb1c3371344cd617eb073c6c00872e9b0e5a7fefed6cd29f327a1b26ab5c498"
+                "sha256:9181e2a34d80f07a359ff1d0504fad3a47e00e1cf2c475b0aa7dcb030af54c40",
+                "sha256:94bdc84da376b3dd5061aa0c3b6faffe943ee2e56fa4ff9bd63e1643932f34fc"
             ],
-            "version": "==5.3.0"
+            "version": "==5.3.1"
         },
         "pkginfo": {
             "hashes": [
@@ -291,6 +291,14 @@
             ],
             "index": "pypi",
             "version": "==4.6.3"
+        },
+        "pytest-azurepipelines": {
+            "hashes": [
+                "sha256:0df7ee37f2283e8e17059996b7269b882ed682c3921f1590cfd440c6a3bd40a0",
+                "sha256:71ad8d0c058800639951b3cefc9201b1df6790342a0982029b19631aea01d11a"
+            ],
+            "index": "pypi",
+            "version": "==0.6.0"
         },
         "pytest-cov": {
             "hashes": [
