@@ -28,6 +28,13 @@ def get_modified(branch):
     Use git to get the list of modified files
     """
     git = plumbum.local['git']
+    return _get_modified(git, branch)
+
+
+def _get_modified(git, branch):
+    """
+    Use git to get the list of modified files
+    """
     basedir = git('rev-parse', '--show-toplevel').rstrip('\r\n')
     file_list = git('diff', '--name-only', 'HEAD..%s' % (branch,))
     for fname in file_list.splitlines():
