@@ -7,8 +7,8 @@ in all your interactions with the project.
 
 ## Member Responsibilities
 
-First things first, the pademelon-dev community welcomes all contributors with
-good intentions and we will as much as possible respect your efforsts to
+First things first, the pademelon community welcomes all contributors with
+good intentions and we will as much as possible respect your efforts to
 contribute. Specifically we will try and request changes where required and as
 last resort make changes on top of pull requests leaving your work with due
 acknowledgement. We will specifically avoid finding some fault with your code

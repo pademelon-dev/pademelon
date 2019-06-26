@@ -15,6 +15,7 @@ pytest = "*"
 pytest-cov = "*"
 docopt = "*"
 plumbum = "*"
+pyspelling = "*"
 pytest-azurepipelines = "*"
 
 [requires]
