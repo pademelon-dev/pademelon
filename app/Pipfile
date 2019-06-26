@@ -16,6 +16,7 @@ pytest-cov = "*"
 docopt = "*"
 plumbum = "*"
 pytest-azurepipelines42 = "*"
+pyspelling = "*"
 
 [requires]
 python_version = "3.7"
