@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8ff3e72174f559f95b47eb67cb3d6d91fcc0dea47424dc443af6fcdbf87e0d8a"
+            "sha256": "872743b7bd4ced2e3d3dfaaaa4fdb68a0817193e27fe629c073db39acf87e564"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -190,10 +190,10 @@
         },
         "isort": {
             "hashes": [
-                "sha256:c40744b6bc5162bbb39c1257fe298b7a393861d50978b565f3ccd9cb9de0182a",
-                "sha256:f57abacd059dc3bd666258d1efb0377510a89777fda3e3274e3c01f7c03ae22d"
+                "sha256:54da7e92468955c4fceacd0c86bd0ec997b0e1ee80d97f67c35a78b719dccab1",
+                "sha256:6e811fcb295968434526407adb8796944f1988c5b65e8139058f2014cbe100fd"
             ],
-            "version": "==4.3.20"
+            "version": "==4.3.21"
         },
         "lazy-object-proxy": {
             "hashes": [
@@ -363,6 +363,15 @@
             ],
             "index": "pypi",
             "version": "==4.6.3"
+        },
+        "pytest-azurepipelines42": {
+            "hashes": [
+                "sha256:034bed6b14e8542e2485c7aa0efb6aaffadaae66f9cd0072c27ac0245ca83784",
+                "sha256:5c457c187f77abe1b35ad38448d19c55c4e15159ab8172263a6b0b0ee14cecc1",
+                "sha256:7c3e74c8b680615e0558583e9e0c474a2c5db8fc4382b813056d97ffa65ed34d"
+            ],
+            "index": "pypi",
+            "version": "==0.6.0"
         },
         "pytest-cov": {
             "hashes": [
