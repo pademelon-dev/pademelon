@@ -1,0 +1,9 @@
+twine
+wheel
+bandit
+flake8
+pylint
+pytest
+pytest-azurepipelines42
+pytest-cov
+pytest-xdist

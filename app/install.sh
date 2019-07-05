@@ -10,5 +10,9 @@ apt-get update
 apt-get install -qq -y aspell aspell-en
 apt-get install -qq -y hunspell hunspell-en-au
 
-python -m pip install pipenv
-python -m pipenv install --deploy --system 
+for PYVER in ${PYTHONVERS} ; do
+  cd "${BASEDIR}/pip/${PYVER}"
+  "python${PYVER}" -m pip install -r requirements.txt
+  # Display installation
+  "python${PYVER}" -m pip freeze
+done
