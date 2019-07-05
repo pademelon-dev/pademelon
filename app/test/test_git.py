@@ -3,10 +3,11 @@ Test modules for pademelon.git
 """
 
 
-from unittest import mock
-import tempfile
 import io
 import os
+import tempfile
+
+import mock
 
 
 def test_get_modified():
@@ -29,4 +30,4 @@ def test_get_modified():
     # Exercise
     result = _get_modified(fakegit, 'origin/master')
     # Verify
-    assert list(result) == [fname]
+    assert list(result) == [fname]  # nosec

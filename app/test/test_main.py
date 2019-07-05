@@ -18,7 +18,7 @@ def test_main():
         # Exercise
         result = main()  # pylint: disable=assignment-from-no-return
     # Verify
-    assert result is None
+    assert result is None  # nosec
 
 
 def test_show_modified():
@@ -44,4 +44,4 @@ def test_show_modified():
         # Exercise
         result = main()  # pylint: disable=assignment-from-no-return
     # Verify
-    assert result is None
+    assert result is None  # nosec
