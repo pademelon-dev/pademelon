@@ -6,7 +6,7 @@ THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "$( dirname "${THISDIR}" )" )"
 
 MAIN_MODULE="pademelon"
-MODULES=( "${MAIN_MODULE}" "test" )
+MODULES=( "${MAIN_MODULE}" "tests" )
 
 cd "${BASEDIR}/app"
 for PYVER in ${PYTHONVERS} ; do
