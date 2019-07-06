@@ -10,7 +10,7 @@ def test_main():
     """
     # Setup
     from pademelon.__main__ import main
-    from unittest import mock
+    import mock
     fake_docopt = mock.patch(
         'pademelon.__main__.docopt', return_value={}
     )
@@ -18,7 +18,7 @@ def test_main():
         # Exercise
         result = main()  # pylint: disable=assignment-from-no-return
     # Verify
-    assert result is None
+    assert result is None  # nosec
 
 
 def test_show_modified():
@@ -29,7 +29,7 @@ def test_show_modified():
     """
     # Setup
     from pademelon.__main__ import main
-    from unittest import mock
+    import mock
     fake_docopt = mock.patch(
         'pademelon.__main__.docopt', return_value={
             '--show-modified': 'origin/main',
@@ -44,4 +44,4 @@ def test_show_modified():
         # Exercise
         result = main()  # pylint: disable=assignment-from-no-return
     # Verify
-    assert result is None
+    assert result is None  # nosec

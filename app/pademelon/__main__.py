@@ -11,18 +11,19 @@ Options:
                                GIT branch
 
 """
-from __future__ import (
-    absolute_import, print_function, division, unicode_literals,
-)
-
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
 
 # {{{ Imports
 # System Imports
 import sys
+
 # External Imports
 from docopt import docopt
+
 # Local Imports
 from pademelon.git import show_modified
+
 # }}}
 
 

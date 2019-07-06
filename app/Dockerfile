@@ -1,7 +1,6 @@
-FROM python:3.7.3-stretch
+FROM 3amigos/pipenv-all:latest
 COPY install.sh /build/install.sh
-COPY Pipfile /build/Pipfile
-COPY Pipfile.lock /build/Pipfile.lock
+COPY pip /build/pip
 RUN /build/install.sh
 WORKDIR /workspace/app
 ENV HOME /workspace/app

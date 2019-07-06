@@ -1,0 +1,12 @@
+bandit
+docopt
+flake8
+mock
+plumbum
+pylint
+pytest
+pytest-azurepipelines42
+pytest-cov
+pytest-xdist
+twine
+wheel
