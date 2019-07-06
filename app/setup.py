@@ -17,6 +17,8 @@ setup(
         ' request.'
     ),
     url='https://github.com/pademelon-dev/pademelon',
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
+    install_requires=['docopt', 'plumbum'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Pytest',

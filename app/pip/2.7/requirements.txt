@@ -1,6 +1,8 @@
 bandit
+docopt
 flake8
 mock
+plumbum
 pylint
 pytest
 pytest-azurepipelines42
