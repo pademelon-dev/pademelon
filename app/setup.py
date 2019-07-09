@@ -35,6 +35,6 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
-        "License :: OSI Approved :: GNU GENERAL PUBLIC LICENSE V3 (GPLV3)",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
 )
