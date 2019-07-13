@@ -1,6 +1,7 @@
 bandit
 docopt
 flake8
+isort
 mock
 plumbum
 pylint
