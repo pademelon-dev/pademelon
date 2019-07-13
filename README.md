@@ -16,3 +16,7 @@ https://pypi.org/project/pademelon/
 
 # Install
 > pip install pademelon
+
+# Additional Documentation:
+* [Code of Conduct](CODE_OF_CONDUCT.md).
+* [Contribution Guidelines](CONTRIBUTING.md).
