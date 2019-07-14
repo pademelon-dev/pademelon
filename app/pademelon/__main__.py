@@ -14,17 +14,11 @@ Options:
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-# {{{ Imports
-# System Imports
 import sys
 
-# External Imports
 from docopt import docopt
 
-# Local Imports
 from pademelon.git import show_modified
-
-# }}}
 
 
 def main():
