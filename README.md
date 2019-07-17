@@ -5,11 +5,11 @@ soft touch approach to bringing a new checking tool into a large project
 without one big bang.
 
 Supported checks include:
-* isort
-* Bandit
-* Flake8
-* Pytest minimum coverage percentage.
-* pyspelling
+* `isort`
+* `bandit`
+* `flake8`
+* `pytest` minimum coverage percentage.
+* `pyspelling`
 
 # PyPi.org
 https://pypi.org/project/pademelon/
