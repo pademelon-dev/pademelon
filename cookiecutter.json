@@ -1,0 +1,20 @@
+{
+    "project_name":  "pademelon",
+    "project_long_name":  "{{ cookiecutter.project_name }}",
+    "project_description": "Used to retrospectively add static type checking on legacy project by just running the checks on only files modified in a pull request.",
+    "project_long_description": "{{ cookiecutter.project_description }}",
+    "project_slug":  "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "github_org": "pademelon-dev",
+    "github_repo": "pademelon",
+    "project_url": "https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.github_repo }}",
+    "py_modulename":  "{{ cookiecutter.project_slug }}",
+    "community_name":  "{{ cookiecutter.project_name }}",
+    "docker_application_tagname": "app",
+    "docker_workspace_dirname": "workspace",
+    "docker_application_dirname": "{{ cookiecutter.docker_application_tagname }}",
+    "author_email": "tim.gates@iress.com",
+    "author_name": "Tim Gates",
+    "maintainer_name": "{{ cookiecutter.author_name }}",
+    "maintainer_email": "{{ cookiecutter.author_email }}",
+    "project_email": "{{ cookiecutter.maintainer_email }}"
+}
