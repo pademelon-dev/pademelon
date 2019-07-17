@@ -1,7 +1,6 @@
 assignees
 iOS
 md
-pademelon
 PyPi
 Pytest
 README

@@ -4,44 +4,76 @@
 `setuptools` Distribution for pademelon
 """
 
-# {{{ Import
 # System  Imports
 import codecs
 import os
+import re
 
 # External Imports
 from setuptools import setup
 
-# }}}
+PACKAGE_NAME = 'pademelon'
 
 
-def read(fname):
+def load_readme(fname):
+    """
+    Read the contents of relative `README` file.
+    """
+    file_path = os.path.join(os.path.dirname(__file__), fname)
+    with codecs.open(file_path, encoding='utf-8') as fobj:
+        sub = (
+            '(https://github.com/'
+            'pademelon-dev/pademelon'
+            '/blob/master/\\g<1>)'
+        )
+        markdown_fixed = re.sub(
+            '[(]([^)]*[.](?:md|rst))[)]',
+            sub,
+            fobj.read(),
+        )
+        rst_fixed = re.sub(
+            '^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))',
+            sub,
+            markdown_fixed
+        )
+        return rst_fixed
+
+
+def read_version():
     """
     Read the contents of relative file.
     """
-    file_path = os.path.join(os.path.dirname(__file__), fname)
-    return codecs.open(file_path, encoding='utf-8').read()
+    file_path = os.path.join(
+        os.path.dirname(__file__), PACKAGE_NAME, 'version.py'
+    )
+    regex = re.compile('__version__ = [\'\"]([^\'\"]*)[\'\"]')
+    with codecs.open(file_path, encoding='utf-8') as fobj:
+        for line in fobj:
+            mobj = regex.match(line)
+            if mobj:
+                return mobj.group(1)
+    raise Exception('Failed to read version')
 
 
 setup(
-    name='pademelon',
-    version='0.1.2dev',
+    name=PACKAGE_NAME,
+    version=read_version(),
     author='Tim Gates',
     author_email='tim.gates@iress.com',
     maintainer='Tim Gates',
     maintainer_email='tim.gates@iress.com',
-    packages=['pademelon'],
+    packages=[PACKAGE_NAME],
     license='GPLv3+',
     description=(
-        'Used to retrospectively add static type checking on legacy project'
-        ' by just running the checks on only files modified in a pull'
-        ' request.'
+        'Used to retrospectively add static type checking on legacy'
+        ' project by just running the checks on only files modified'
+        ' in a pull request.'
     ),
-    url='https://github.com/pademelon-dev/pademelon',
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
-    install_requires=['docopt', 'plumbum'],
-    long_description=read('README.md'),
+    long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
+    install_requires=['plumbum', 'docopt'],
+    url='https://github.com/pademelon-dev/pademelon',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Programming Language :: Python',

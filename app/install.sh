@@ -13,10 +13,11 @@ apt-get install -qq -y git
 
 for PYVER in ${PYTHONVERS} ; do
   cd "${BASEDIR}/pip/${PYVER}"
-  "python${PYVER}" -m pip install -r test_requirements.txt
-  if [ $(wc -l < requirements.txt) -gt 0 ] ; then
-      "python${PYVER}" -m pip install -r requirements.txt
-  fi
+  for reqfile in */requirements.txt ; do
+    if [ $(wc -l < "${reqfile}") -gt 0 ] ; then
+      "python${PYVER}" -m pip install -r "${reqfile}"
+    fi
+  done
   # Display installation
   "python${PYVER}" -m pip freeze
 done
