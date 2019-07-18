@@ -1,7 +1,13 @@
+args
 assignees
+exename
 iOS
 md
+nosec
 pademelon
+pylint
 PyPi
 Pytest
 README
+sexualized
+socio
