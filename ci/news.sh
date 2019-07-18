@@ -5,8 +5,6 @@ set -euxo pipefail
 THISDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASEDIR="$( dirname "${THISDIR}" )"
 
-MAIN_MODULE="pademelon"
-MODULES=( "${MAIN_MODULE}" "test" )
+source "${BASEDIR}/ci/shared/_docker_helper.sh"
 
-cd "${BASEDIR}/app"
-python -m pipenv "$@"
+docker_compose_run app "/workspace/ci/in_docker/news.sh" "$@"
