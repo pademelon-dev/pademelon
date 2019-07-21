@@ -10,7 +10,7 @@ import os
 import re
 
 # External Imports
-from setuptools import setup
+from setuptools import find_packages, setup
 
 PACKAGE_NAME = 'pademelon'
 
@@ -62,7 +62,7 @@ setup(
     author_email='tim.gates@iress.com',
     maintainer='Tim Gates',
     maintainer_email='tim.gates@iress.com',
-    packages=[PACKAGE_NAME],
+    packages=find_packages(exclude=['tests']),
     license='GPLv3+',
     description=(
         'Used to retrospectively add static type checking on legacy'
