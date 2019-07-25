@@ -65,16 +65,18 @@ setup(
     packages=find_packages(exclude=['tests']),
     license='GPLv3+',
     description=(
-        'Used to retrospectively add static type checking on legacy'
-        ' project by just running the checks on only files modified'
-        ' in a pull request.'
+        'Used to retrospectively add static type checking on legacy project by just running the checks on only files modified in a pull request.'
     ),
     long_description=load_readme('README.md'),
     long_description_content_type='text/markdown',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
-    install_requires=['plumbum', 'docopt'],
+    install_requires=[
+        elem for elem in
+        'docopt\nplumbum'.split('\n')
+        if elem
+    ],
     url='https://github.com/pademelon-dev/pademelon',
-    classifiers=[
+    classifiers=[elem for elem in [
         'Development Status :: 4 - Beta',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
@@ -88,5 +90,5 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Operating System :: OS Independent',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    ],
+    ] if elem],
 )
