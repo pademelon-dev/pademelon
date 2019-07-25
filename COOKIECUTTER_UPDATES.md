@@ -16,9 +16,18 @@ consider application of new updates.
 * Use (towncrier)[https://github.com/hawkowl/towncrier] for news updates.
 * Use (dlint)[https://github.com/duo-labs/dlint] for security static analysis.
 * Use (safety)[https://github.com/pyupio/safety] to check package safety.
-* Locate packages excluding tests using setuptools.find\_packages.
 * Use (pytest)[https://github.com/pytest-dev/pytest/] for unit testing.
 * Use (pytest-cov)[https://github.com/pytest-dev/pytest-cov] to check 100% unit test coverage.
 * Use (pytest-xdist)[https://github.com/pytest-dev/pytest-xdist] for test parallelization.
 * Use (pytest-azurepipelines)[https://github.com/tonybaloney/pytest-azurepipelines] to publish tests results and coverage to Azure Pipelines Artifacts.
 * Use (resplendent)[https://github.com/resplendent-dev/resplendent] to spell check reStructuredText in pyspelling.
+* Use (shellcheck)[https://github.com/koalaman/shellcheck] for shell script static analysis.
+* Use (sphinx)[https://github.com/sphinx-doc/sphinx] for documentation generation.
+* Use (twine)[https://github.com/pypa/twine] for publishing to PyPi.
+* Badge for (PyPi)[https://pypi.org/]
+* Badge for (ReadTheDocs)[https://readthedocs.org/]
+* Badge for (Azure Pipelines)[https://azure.microsoft.com/en-au/services/devops/pipelines/]
+* Badge for (Coveralls)[https://coveralls.io/]
+
+# Minor Updates
+* Installation details on README.md
