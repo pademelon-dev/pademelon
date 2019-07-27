@@ -3,9 +3,9 @@
 [![Azure Status](https://dev.azure.com/timgates/timgates/_apis/build/status/pademelon-dev.pademelon?branchName=master)](https://dev.azure.com/timgates/timgates/_build/latest?definitionId=7&branchName=master)
 [![Travis Status](https://travis-ci.org/pademelon-dev/pademelon.svg?branch=master)](https://travis-ci.org/pademelon-dev/pademelon)
 [![Appveyor Status](https://ci.appveyor.com/api/projects/status/github/pademelon-dev/pademelon/branch/master?svg=true)](https://ci.appveyor.com/project/pademelon-dev/pademelon)
-[![PyPi version](https://img.shields.io/pypi/v/pademelon.svg)](https://pypi.org/project/pademelon)
+[![PyPI version](https://img.shields.io/pypi/v/pademelon.svg)](https://pypi.org/project/pademelon)
 [![Python Versions](https://img.shields.io/pypi/pyversions/pademelon.svg)](https://pypi.org/project/pademelon)
-[![PyPi downloads per month](https://img.shields.io/pypi/dm/pademelon.svg)](https://pypi.org/project/pademelon)
+[![PyPI downloads per month](https://img.shields.io/pypi/dm/pademelon.svg)](https://pypi.org/project/pademelon)
 [![Documentation Status](https://readthedocs.org/projects/pademelon/badge/?version=latest)](https://pademelon.readthedocs.io/en/latest/?badge=latest)
 [![Coverage Status](https://coveralls.io/repos/github/pademelon-dev/pademelon/badge.svg)](https://coveralls.io/github/pademelon-dev/pademelon/)
 
@@ -21,16 +21,40 @@ Supported checks include:
 * `pytest` minimum coverage percentage.
 * `pyspelling`
 
-# Available from PyPi.org
+# Installation
+
+You can install pademelon for
+[Python](https://www.python.org/) via
+[pip](https://pypi.org/project/pip/)
+from [PyPI](https://pypi.org/).
+
+```
+$ pip install pademelon
+```
+
+# Download from PyPI.org
 
 https://pypi.org/project/pademelon/
 
-# Install
+# Contributing
 
-This library can be installed in (Python)[https://www.python.org/] via
-(Pip)[https://pypi.org/].
+Contributions are very welcome, consider using the
+[file an issue](https://github.com/pademelon-dev/pademelon/issues)
+to discuss the work before beginning, but if you already have a Pull Request
+ready then this is no problem, please submit it and it will be very gratefully
+considered. The [Contribution Guidelines](CONTRIBUTING.md)
+outlines the pademelon commitment to ensuring all
+contributions receive appropriate recognition.
 
-> pip install pademelon
+# License
+
+
+
+# Issues
+
+If you encounter any problems, please 
+[file an issue](https://github.com/pademelon-dev/pademelon/issues)
+along with a detailed description.
 
 # Additional Documentation:
 
