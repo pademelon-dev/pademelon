@@ -20,7 +20,6 @@ cobertura
 config
 cookiecutter
 CookieCutter
-pademelon
 cov
 css
 datetime
@@ -29,6 +28,7 @@ deviceid
 deviceobj
 deviceobject
 dlint
+docopt
 DOCTYPE
 exename
 genindex
@@ -60,6 +60,7 @@ param
 params
 passhash
 pipefish
+plumbum
 pre
 probeobject
 prtg
