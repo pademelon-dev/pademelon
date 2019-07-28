@@ -32,9 +32,19 @@ from [PyPI](https://pypi.org/).
 $ pip install pademelon
 ```
 
-# Download from PyPI.org
+
+
+
+## Prerequisites:
+- docopt
+- plumbum
+
+
+## Download from PyPI.org
 
 https://pypi.org/project/pademelon/
+
+
 
 # Contributing
 
