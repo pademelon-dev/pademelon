@@ -1,5 +1,5 @@
 """
-Test modules for pademelon.git
+Test modules for pademelon.changes
 """
 
 
@@ -28,6 +28,6 @@ def test_get_modified():
         '{}\n\n'.format(fname),
     ]
     # Exercise
-    result = _get_modified(fakegit, 'origin/master')
+    result = _get_modified(fakegit, tmpdir, 'origin/master')
     # Verify
     assert list(result) == [fname]  # nosec
