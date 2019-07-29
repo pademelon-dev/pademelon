@@ -2,7 +2,7 @@
 
 [![Azure Status](https://dev.azure.com/timgates/timgates/_apis/build/status/pademelon-dev.pademelon?branchName=master)](https://dev.azure.com/timgates/timgates/_build/latest?definitionId=7&branchName=master)
 [![Travis Status](https://travis-ci.org/pademelon-dev/pademelon.svg?branch=master)](https://travis-ci.org/pademelon-dev/pademelon)
-[![Appveyor Status](https://ci.appveyor.com/api/projects/status/github/pademelon-dev/pademelon/branch/master?svg=true)](https://ci.appveyor.com/project/pademelon-dev/pademelon)
+[![Appveyor Status](https://ci.appveyor.com/api/projects/status/github/appveyor_user_goes_here/pademelon/branch/master?svg=true)](https://ci.appveyor.com/project/appveyor_user_goes_here/pademelon)
 [![PyPI version](https://img.shields.io/pypi/v/pademelon.svg)](https://pypi.org/project/pademelon)
 [![Python Versions](https://img.shields.io/pypi/pyversions/pademelon.svg)](https://pypi.org/project/pademelon)
 [![PyPI downloads per month](https://img.shields.io/pypi/dm/pademelon.svg)](https://pypi.org/project/pademelon)
