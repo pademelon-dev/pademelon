@@ -12,11 +12,11 @@ import mock
 
 def test_get_modified():
     """
-    GIVEN a fake git method WHEN calling the pademelon.git._get_modified
+    GIVEN a fake git method WHEN calling the pademelon.changes._get_modified
     method THEN the call returns the fake series of files as modified.
     """
     # Setup
-    from pademelon.git import _get_modified
+    from pademelon.changes import _get_modified
     fakegit = mock.Mock()
     tmpdir = tempfile.mkdtemp()
     fname = 'test.txt'
