@@ -39,7 +39,7 @@ $ pip install pademelon
 
 
 ## Prerequisites:
-- docopt
+- click
 - GitPython
 
 
