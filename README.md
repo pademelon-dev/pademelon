@@ -21,6 +21,9 @@ Supported checks include:
 * `pytest` minimum coverage percentage.
 * `pyspelling`
 
+More details can be found in the
+[Online Documentation.](https://pademelon.readthedocs.io/en/latest/)
+
 # Installation
 
 You can install pademelon for

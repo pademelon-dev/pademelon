@@ -5,7 +5,23 @@ Test modules for pademelon.changes
 
 import io
 import os
+import shutil
 import tempfile
+
+import pytest
+
+
+def test_no_get():
+    """
+    Ensure an error is raised when not in a git directory
+    """
+    from pademelon.changes import get_basedir
+    tmpdir = tempfile.mkdtemp()
+    try:
+        with pytest.raises(Exception):
+            get_basedir(tmpdir)
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
 
 
 def test_get_modified():
