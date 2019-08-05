@@ -40,7 +40,7 @@ $ pip install pademelon
 
 ## Prerequisites:
 - docopt
-- plumbum
+- GitPython
 
 
 ## Download from PyPI.org
