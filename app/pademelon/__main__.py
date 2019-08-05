@@ -18,7 +18,7 @@ import sys
 
 from docopt import docopt
 
-from pademelon.git import show_modified
+from pademelon.changes import show_modified
 
 
 def main():

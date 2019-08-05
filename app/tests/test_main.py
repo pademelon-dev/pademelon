@@ -36,7 +36,7 @@ def test_show_modified():
         }
     )
     fake_get_modified = mock.patch(
-        'pademelon.git._get_modified', return_value=[
+        'pademelon.changes._get_modified', return_value=[
             'fake.txt',
         ]
     )
