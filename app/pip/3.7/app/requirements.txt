@@ -1,2 +1,2 @@
-docopt
+click
 GitPython
