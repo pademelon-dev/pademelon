@@ -19,7 +19,7 @@ FakeGit = collections.namedtuple(
 @contextmanager
 def git_repo(paths):
     """
-    Create a test repo
+    Create a test repository.
     """
     import git
     upstream_branch = 'start'

@@ -19,11 +19,11 @@ def test_main(args):
     from click.testing import CliRunner
     from .util import git_repo
     fname = 'fake.txt'
-    with git_repo({fname: ''}) as fakegit:
+    with git_repo({fname: ''}) as fake_git:
         runner = CliRunner()
         # Exercise
         fullargs = (list(args) + [
-            '--upstream-branch', fakegit.upstream_branch,
+            '--upstream-branch', fake_git.upstream_branch,
         ])
         result = runner.invoke(main, fullargs)
     # Verify
