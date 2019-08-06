@@ -28,13 +28,6 @@ def get_basedir(dirname):
     return get_basedir(nextname)
 
 
-def show_modified(branch):
-    """
-    Display the list of modified files against target branch
-    """
-    print('\n'.join(get_modified(branch)))
-
-
 def get_modified(branch):
     """
     Use git to get the list of modified files
