@@ -2,8 +2,14 @@
 Test modules for pademelon __main__
 """
 
+import pytest
 
-def test_main():
+
+@pytest.mark.parametrize('args,', [
+    (),
+    ('check',),
+])
+def test_main(args):
     """
     GIVEN the pademelon.__main__ module entry point WHEN calling main THEN
     the call executes successfully with expected output
@@ -11,15 +17,14 @@ def test_main():
     # Setup
     from pademelon.__main__ import main
     from click.testing import CliRunner
-    import mock
-    fake_get_modified = mock.patch(
-        'pademelon.changes._get_modified', return_value=[
-            'fake.txt',
-        ]
-    )
-    runner = CliRunner()
-    with fake_get_modified:
+    from .util import git_repo
+    fname = 'fake.txt'
+    with git_repo({fname: ''}) as fakegit:
+        runner = CliRunner()
         # Exercise
-        result = runner.invoke(main, [])
+        fullargs = (list(args) + [
+            '--upstream-branch', fakegit.upstream_branch,
+        ])
+        result = runner.invoke(main, fullargs)
     # Verify
-    assert result.output == 'fake.txt\n'  # nosec
+    assert result.output == '%s\n' % (fname,)  # nosec
