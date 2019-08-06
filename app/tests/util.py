@@ -3,11 +3,11 @@ Test Utilities
 """
 
 import collections
-import os
 import io
-from contextlib import contextmanager
-import tempfile
+import os
 import shutil
+import tempfile
+from contextlib import contextmanager
 
 FakeGit = collections.namedtuple(
     'FakeGit', [
