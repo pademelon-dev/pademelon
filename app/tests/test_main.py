@@ -23,7 +23,6 @@ def test_main(args):
         runner = CliRunner()
         # Exercise
         fullargs = (list(args) + [
-            # '--upstream-branch', fakegit.upstream_branch,
         ])
         result = runner.invoke(main, fullargs)
     # Verify
