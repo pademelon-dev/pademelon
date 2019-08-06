@@ -20,12 +20,9 @@ def get_basedir(dirname):
     Working up from the specified directory find a directory with a .git
     folder
     """
-    if os.path.isdir(os.path.join(dirname, '.git')):
-        return dirname
-    nextname = os.path.dirname(dirname)
-    if nextname == dirname:
-        raise Exception('Failed to locate .git')
-    return get_basedir(nextname)
+    git_repo = git.Repo(dirname, search_parent_directories=True)
+    git_root = git_repo.git.rev_parse("--show-toplevel")
+    return git_root
 
 
 def get_modified(branch):

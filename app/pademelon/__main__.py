@@ -4,10 +4,13 @@ Module load handler for execution via python -m pademelon.
 """
 from __future__ import absolute_import, division, print_function
 
+import os
+
 import click
 
-from pademelon.changes import get_modified
+from pademelon.changes import get_modified, get_basedir
 from pademelon.version import __version__
+from pademelon.check_flake8 import check_flake8
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
@@ -16,32 +19,41 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.version_option(version=__version__)
 @click.option('--upstream-branch', default='origin/master')
 @click.option('--show/--no-show', default=True)
+@click.option('--flake8/--no-flake8', default=True)
 @click.pass_context
-def main(ctxt, upstream_branch, show):
+def main(ctxt, upstream_branch, show, flake8):
     """
     Run CI checks only against modified files.
     """
     if ctxt.invoked_subcommand is None:
-        run_check(upstream_branch, show)
+        run_check(upstream_branch, show, flake8)
 
 
 @main.command()
 @click.option('--upstream-branch', default='origin/master')
 @click.option('--show/--no-show', default=True)
-def check(upstream_branch, show):  # pylint: disable=unused-argument
+@click.option('--flake8/--no-flake8', default=True)
+def check(upstream_branch, show, flake8):  # pylint: disable=unused-argument
     """
     Run the pademelon check
     """
-    run_check(upstream_branch, show)
+    run_check(upstream_branch, show, flake8)
 
 
-def run_check(upstream_branch, show):
+def run_check(upstream_branch, show, flake8):
     """
     Handle pademelon check
     """
-    file_list = get_modified(upstream_branch)
+    file_list = list(get_modified(upstream_branch))
+    basedir = get_basedir(os.getcwd())
+    file_py = [
+        os.path.join(basedir, filename) for filename in file_list
+        if os.path.splitext(filename)[-1] == '.py'
+    ]
     if show:
         print('\n'.join(file_list))
+    if flake8:
+        check_flake8(file_py) # bad
 
 
 if __name__ == '__main__':
