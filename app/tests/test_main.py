@@ -2,8 +2,14 @@
 Test modules for pademelon __main__
 """
 
+import pytest
 
-def test_main():
+
+@pytest.mark.parametrize('args', [
+    ([],),
+    (['check'],),
+])
+def test_main(args):
     """
     GIVEN the pademelon.__main__ module entry point WHEN calling main THEN
     the call executes successfully with expected output
@@ -20,6 +26,6 @@ def test_main():
     runner = CliRunner()
     with fake_get_modified:
         # Exercise
-        result = runner.invoke(main, [])
+        result = runner.invoke(main, args)
     # Verify
     assert result.output == 'fake.txt\n'  # nosec
