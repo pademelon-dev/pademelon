@@ -1,6 +1,7 @@
 """
 Test modules for pademelon __main__
 """
+from __future__ import (absolute_import, division, print_function)
 
 import pytest
 
@@ -19,7 +20,7 @@ def test_main(args):
     from click.testing import CliRunner
     from .util import git_repo
     fname = 'fake.txt'
-    with git_repo({fname: ''}):
+    with git_repo({fname: u''}):
         runner = CliRunner()
         # Exercise
         fullargs = (list(args) + [

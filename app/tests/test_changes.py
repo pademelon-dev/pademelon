@@ -1,6 +1,7 @@
 """
 Test modules for pademelon.changes
 """
+from __future__ import (absolute_import, division, print_function)
 
 import shutil
 import tempfile
@@ -30,7 +31,7 @@ def test_get_modified():
     from pademelon.changes import _get_modified
     from .util import git_repo
     fname = 'fakedir/test.txt'
-    with git_repo({fname: ''}) as fakegit:
+    with git_repo({fname: u''}) as fakegit:
         # Exercise
         result = list(_get_modified(
             fakegit.repo, fakegit.tmpdir, fakegit.upstream_branch

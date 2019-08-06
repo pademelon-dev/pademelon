@@ -1,6 +1,7 @@
 """
 Test Utilities
 """
+from __future__ import (absolute_import, division, print_function)
 
 import collections
 import io
@@ -30,7 +31,7 @@ def git_repo(paths):
         fname = 'a.txt'
         fpath = os.path.join(tmpdir, fname)
         with io.open(fpath, 'w', encoding='utf-8') as fobj:
-            fobj.write('Test\n')
+            fobj.write(u'Test\n')
         repo.index.add([fname])
         repo.index.commit('Empty')
         repo.create_tag(upstream_branch)
