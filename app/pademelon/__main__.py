@@ -2,7 +2,7 @@
 """
 Module load handler for execution via python -m pademelon.
 """
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
 
 import click
 
