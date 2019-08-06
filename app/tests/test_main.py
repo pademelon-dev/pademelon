@@ -5,9 +5,9 @@ Test modules for pademelon __main__
 import pytest
 
 
-@pytest.mark.parametrize('args', [
-    ([],),
-    (['check'],),
+@pytest.mark.parametrize('args,', [
+    (),
+    ('check',),
 ])
 def test_main(args):
     """
@@ -17,15 +17,14 @@ def test_main(args):
     # Setup
     from pademelon.__main__ import main
     from click.testing import CliRunner
-    import mock
-    fake_get_modified = mock.patch(
-        'pademelon.changes._get_modified', return_value=[
-            'fake.txt',
-        ]
-    )
-    runner = CliRunner()
-    with fake_get_modified:
+    from .util import git_repo
+    fname = 'fake.txt'
+    with git_repo({fname: ''}):
+        runner = CliRunner()
         # Exercise
-        result = runner.invoke(main, args)
+        fullargs = (list(args) + [
+            # '--upstream-branch', fakegit.upstream_branch,
+        ])
+        result = runner.invoke(main, fullargs)
     # Verify
-    assert result.output == 'fake.txt\n'  # nosec
+    assert result.output == '%s\n' % (fname,)  # nosec

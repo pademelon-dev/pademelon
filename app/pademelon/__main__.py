@@ -36,7 +36,7 @@ def run_check():
     """
     Handle pademelon check
     """
-    show_modified('origin/master')
+    show_modified('start')
 
 
 if __name__ == '__main__':
