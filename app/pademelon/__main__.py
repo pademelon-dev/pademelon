@@ -1,38 +1,42 @@
+#!/usr/bin/env python
 """
 Module load handler for execution via python -m pademelon.
-
-Usage:
-    %(exename)s [options] [<args>...]
-    %(exename)s (-h | --help)
-
-Options:
-    -h --help                  Show this screen
-    --show-modified=<branch>   Display details of the modified files against
-                               GIT branch
-
 """
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+from __future__ import absolute_import, division, print_function
 
-import sys
-
-from docopt import docopt
+import click
 
 from pademelon.changes import show_modified
+from pademelon.version import __version__
+
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 
-def main():
+@click.group(context_settings=CONTEXT_SETTINGS, invoke_without_command=True)
+@click.version_option(version=__version__)
+@click.pass_context
+def main(ctxt):
     """
-    Main Command Line entry point
+    Run CI checks only against modified files.
     """
-    args = docopt(__doc__ % {
-        'exename': ''.join(sys.argv[0:1]),
-    })
-    if args.get('--show-modified') is not None:
-        show_modified(args['--show-modified'])
-    else:
-        print('Unknown options: %r' % (args,))
+    if ctxt.invoked_subcommand is None:
+        run_check()
+
+
+@main.command()
+def check(**kwargs):  # pylint: disable=unused-argument
+    """
+    Run the pademelon check
+    """
+    run_check()
+
+
+def run_check():
+    """
+    Handle pademelon check
+    """
+    show_modified('start')
 
 
 if __name__ == '__main__':
-    main()
+    main()  # pylint: disable=no-value-for-parameter

@@ -1,10 +1,8 @@
 """
 Test modules for pademelon.changes
 """
+from __future__ import absolute_import, division, print_function
 
-
-import io
-import os
 import shutil
 import tempfile
 
@@ -31,18 +29,12 @@ def test_get_modified():
     """
     # Setup
     from pademelon.changes import _get_modified
-    import git
-    tmpdir = tempfile.mkdtemp()
-    repo = git.Repo.init(tmpdir)
-    repo.index.commit('Empty')
-    repo.create_tag('start')
-    fname = 'test.txt'
-    fpath = os.path.join(tmpdir, fname)
-    with io.open(fpath, 'wb'):
-        pass
-    repo.index.add([fname])
-    repo.index.commit('An update')
-    # Exercise
-    result = _get_modified(repo, tmpdir, 'start')
+    from .util import git_repo
+    fname = 'fakedir/test.txt'
+    with git_repo({fname: u''}) as fakegit:
+        # Exercise
+        result = list(_get_modified(
+            fakegit.repo, fakegit.tmpdir, fakegit.upstream_branch
+        ))
     # Verify
-    assert list(result) == [fname]  # nosec
+    assert result == [fname]  # nosec
