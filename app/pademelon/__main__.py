@@ -53,7 +53,7 @@ def run_check(upstream_branch, show, flake8):
     if show:
         print('\n'.join(file_list))
     if flake8:
-        check_flake8(file_py) # bad
+        check_flake8(file_py)
 
 
 if __name__ == '__main__':
