@@ -6,9 +6,9 @@ from __future__ import absolute_import, division, print_function
 
 def test_flake8_only_modified():
     """
-    GIVEN a fake GIT repo where existing files with flake8 issues are present
-    and new files were more flake8 issues are present WHEN calling main THEN
-    the output only reports the new file issues.
+    GIVEN a fake GIT repository where existing files with flake8 issues are
+    present and new files were more flake8 issues are present WHEN calling
+    main THEN the output only reports the new file issues.
     """
     # Setup
     from pademelon.__main__ import main
