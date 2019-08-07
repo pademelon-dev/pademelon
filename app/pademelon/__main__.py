@@ -8,9 +8,9 @@ import os
 
 import click
 
-from pademelon.changes import get_modified, get_basedir
-from pademelon.version import __version__
+from pademelon.changes import get_basedir, get_modified
 from pademelon.check_flake8 import check_flake8
+from pademelon.version import __version__
 
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
