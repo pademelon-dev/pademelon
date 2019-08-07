@@ -38,8 +38,8 @@ def _get_modified(repo, basedir, branch):
     """
     Use git to get the list of modified files
     """
-    diff_entries = repo.commit(branch).diff('HEAD')
-    for change_type in ('A', 'R', 'M'):
+    diff_entries = repo.commit(branch).diff("HEAD")
+    for change_type in ("A", "R", "M"):
         for diff_entry in diff_entries.iter_change_type(change_type):
             fname = diff_entry.b_path
             fpath = os.path.join(basedir, fname)
