@@ -14,6 +14,7 @@ def test_no_get():
     Ensure an error is raised when not in a git directory
     """
     from pademelon.changes import get_basedir
+
     tmpdir = tempfile.mkdtemp()
     try:
         with pytest.raises(Exception):
@@ -30,11 +31,12 @@ def test_get_modified():
     # Setup
     from pademelon.changes import _get_modified
     from .util import git_repo
-    fname = 'fakedir/test.txt'
-    with git_repo({fname: u''}) as fakegit:
+
+    fname = "fakedir/test.txt"
+    with git_repo({fname: u""}) as fakegit:
         # Exercise
-        result = list(_get_modified(
-            fakegit.repo, fakegit.tmpdir, fakegit.upstream_branch
-        ))
+        result = list(
+            _get_modified(fakegit.repo, fakegit.tmpdir, fakegit.upstream_branch)
+        )
     # Verify
     assert result == [fname]  # nosec
