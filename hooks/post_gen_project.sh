@@ -7,5 +7,6 @@ TOP="$(dirname "${BASEDIR}")"
 
 cd "${TOP}"
 git checkout -- \
+ NEWS.rst \
  app/pademelon \
  app/tests
