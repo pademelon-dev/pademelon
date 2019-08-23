@@ -8,6 +8,7 @@
 [![PyPI downloads per month](https://img.shields.io/pypi/dm/pademelon.svg)](https://pypi.org/project/pademelon)
 [![Documentation Status](https://readthedocs.org/projects/pademelon/badge/?version=latest)](https://pademelon.readthedocs.io/en/latest/?badge=latest)
 [![Coverage Status](https://coveralls.io/repos/github/pademelon-dev/pademelon/badge.svg)](https://coveralls.io/github/pademelon-dev/pademelon/)
+[![Black](https://camo.githubusercontent.com/28a51fe3a2c05048d8ca8ecd039d6b1619037326/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64652532307374796c652d626c61636b2d3030303030302e737667)](https://github.com/psf/black)
 
 Used to retrospectively add static type checking on legacy project by just
 running the checks on only files modified in a pull request. Can be used as a
