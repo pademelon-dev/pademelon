@@ -13,18 +13,24 @@ import re
 from setuptools import find_packages, setup
 
 PACKAGE_NAME = "pademelon"
+URL = "https://github.com/pademelon-dev/pademelon"
+GITHUB_ORG = "pademelon-dev"
+GITHUB_REPO = "pademelon"
+RE_SUB = "(https://github.com/%s/%s/blob/master/\\g<1>)" % (GITHUB_ORG, GITHUB_REPO)
 
 
-def load_readme(fname):
+def load_include(fname, transform=False):
     """
     Read the contents of relative `README` file.
     """
     file_path = os.path.join(os.path.dirname(__file__), fname)
     with codecs.open(file_path, encoding="utf-8") as fobj:
-        sub = "(https://github.com/" "pademelon-dev/pademelon" "/blob/master/\\g<1>)"
-        markdown_fixed = re.sub("[(]([^)]*[.](?:md|rst))[)]", sub, fobj.read())
+        data = fobj.read()
+        if not transform:
+            return data
+        markdown_fixed = re.sub("[(]([^)]*[.](?:md|rst))[)]", RE_SUB, data)
         rst_fixed = re.sub(
-            "^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))", sub, markdown_fixed
+            "^[.][.] [_][`][^`]*[`][:] ([^)]*[.](?:md|rst))", RE_SUB, markdown_fixed
         )
         return rst_fixed
 
@@ -52,15 +58,16 @@ setup(
     maintainer_email="tim.gates@iress.com",
     packages=find_packages(exclude=["tests"]),
     license="GPLv3+",
-    description=(
-        "Used to retrospectively add static type checking on legacy project"
-        " by just running the checks on only files modified in a pull request."
-    ),
-    long_description=load_readme("README.md"),
+    description=load_include("short_description.txt"),
+    long_description=load_include("README.md", transform=True),
     long_description_content_type="text/markdown",
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
-    install_requires=[elem for elem in "click\nGitPython".split("\n") if elem],
-    url="https://github.com/pademelon-dev/pademelon",
+    install_requires=[
+        elem.strip()
+        for elem in load_include("requirements.txt").splitlines()
+        if elem.strip()
+    ],
+    url=URL,
     classifiers=[
         elem
         for elem in [
